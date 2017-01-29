@@ -2,7 +2,7 @@
 Utility library for converting JSON to CSV, and vice versa.
 
 ## Features
-This module can converts JSON files to CSV, and vice versa. Nestings in input JSON files are written as json-encoded strings in the CSV. Note that, because of this, you must pass `parse_nested_json=true` to the `convert` function. See [Usage](##Usage).
+This module can converts JSON files to CSV, and vice versa. Nestings in input JSON files are written as json-encoded strings in the CSV. Note that, because of this, you must pass `parse_nested_json=true` to the `convert` function. See [Usage](#usage).
 
 ## Installation
 Since this is an unregistered package, you can install it from the julia prompt as follows:
