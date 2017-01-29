@@ -2,6 +2,7 @@ module JsonCsvConverter
 
 using JSON
 using DataFrames
+using DataStructures
 
 type Converter
     convert::Function
@@ -37,7 +38,7 @@ type Converter
                 return false
             end
 
-            data = JSON.parsefile(input_file; dicttype=Dict)
+            data = JSON.parsefile(input_file; dicttype=DataStructures.OrderedDict)
 
             if length(data) == 0
                 println("No data was found in the JSON file")
@@ -88,7 +89,7 @@ type Converter
         end
 
         this._extract_row_values = function (headers::Array{Symbol,1}, row::DataFrames.DataFrameRow{DataFrames.DataFrame}, parse_nested_json::Bool)
-            formatted_row = Dict()
+            formatted_row = OrderedDict()
             for header in headers
                 entity = row[Symbol(header)]
 
